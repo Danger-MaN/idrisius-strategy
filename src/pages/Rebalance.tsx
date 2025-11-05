@@ -574,8 +574,8 @@ export default function Rebalance() {
       baseValue = portfolioUSD / 2;
     }
     
-    // النسبة المثالية هي 1.5% بشرط أن تكون القيمة > $5
-    const threePercentOfBase = baseValue * 0.015;
+    // النسبة المثالية هي 3% بشرط أن تكون القيمة > $5
+    const threePercentOfBase = baseValue * 0.03;
     const maxDeviation = Math.max(...results.map(r => Math.abs(r.currentPercentage - r.targetPercentage)));
     
     let suitabilityMessage = "";
