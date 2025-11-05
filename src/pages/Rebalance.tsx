@@ -574,18 +574,18 @@ export default function Rebalance() {
       baseValue = portfolioUSD / 2;
     }
     
-    // النسبة المثالية هي 3% بشرط أن تكون القيمة > $5
-    const threePercentOfBase = baseValue * 0.03;
+    // النسبة المثالية هي 1.5% بشرط أن تكون القيمة > $5
+    const threePercentOfBase = baseValue * 0.015;
     const maxDeviation = Math.max(...results.map(r => Math.abs(r.currentPercentage - r.targetPercentage)));
     
     let suitabilityMessage = "";
     
     if (threePercentOfBase >= 5) {
-      // 3% مناسبة
-      if (maxDeviation >= 3) {
-        suitabilityMessage = `✅ نسبة الانحراف (${maxDeviation.toFixed(2)}%) مناسبة للتداول. النسبة المثالية: 3% فما فوق`;
+      // 1.5% مناسبة
+      if (maxDeviation >= 1.5) {
+        suitabilityMessage = `✅ نسبة الانحراف (${maxDeviation.toFixed(2)}%) مناسبة للتداول. النسبة المثالية: 1.5% فما فوق`;
       } else {
-        suitabilityMessage = `⚠️ تنبيه: نسبة الانحراف (${maxDeviation.toFixed(2)}%) أقل من النسبة المثالية (3% فما فوق). يُفضل الانتظار لانحراف أكبر.`;
+        suitabilityMessage = `⚠️ تنبيه: نسبة الانحراف (${maxDeviation.toFixed(2)}%) أقل من النسبة المثالية (1.5% فما فوق). يُفضل الانتظار لانحراف أكبر.`;
       }
     } else {
       // نحتاج نسبة أكبر لتغطية $5
