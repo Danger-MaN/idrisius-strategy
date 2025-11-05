@@ -172,7 +172,7 @@ export default function Dashboard() {
     
     let deviation = "";
     if (threePercentOfBase >= 5) {
-      deviation = "3% فما فوق";
+      deviation = "1.5% فما فوق";
     } else {
       // حساب النسبة المثالية التي تغطي $5
       const idealPercent = (5 / baseValue) * 100;
